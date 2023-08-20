@@ -1,0 +1,727 @@
+{
+  "last_node_id": 61,
+  "last_link_id": 105,
+  "nodes": [
+    {
+      "id": 16,
+      "type": "PrimitiveNode",
+      "pos": [
+        -90,
+        -40
+      ],
+      "size": {
+        "0": 398,
+        "1": 140
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            55,
+            57
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text_g",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_G"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {},
+      "widgets_values": [
+        "nsfw, bad face, lowres, low quality, worst quality, low effort, watermark, signature, ugly, poorly drawn "
+      ]
+    },
+    {
+      "id": 32,
+      "type": "PrimitiveNode",
+      "pos": [
+        -90,
+        -220
+      ],
+      "size": {
+        "0": 398,
+        "1": 140
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            51,
+            52
+          ],
+          "widget": {
+            "name": "text_g",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_G"
+              }
+            ]
+          },
+          "slot_index": 0
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {},
+      "widgets_values": [
+        "anime screen cap 1girl standing at classroom, looking at viewer, in school uniform, (solo), teen age, smile, long hair, upper body, trending on pixiv, 8k wallpaper, beautiful face"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "VAEDecode",
+      "pos": [
+        1203,
+        -216
+      ],
+      "size": {
+        "0": 140,
+        "1": 46
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 45,
+          "slot_index": 0
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 46,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            48
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 30,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": [
+        407,
+        -219
+      ],
+      "size": [
+        399.8445539550776,
+        262.62879736328114
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 49,
+          "slot_index": 0
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 51,
+          "widget": {
+            "name": "text_g",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_G"
+              }
+            ]
+          }
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 52,
+          "widget": {
+            "name": "text_l",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_L"
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            50
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "anime screen cap 1girl standing at classroom, looking at viewer, in school uniform, (solo), teen age, smile, long hair, upper body, trending on pixiv, 8k wallpaper, beautiful face",
+        "anime screen cap 1girl standing at classroom, looking at viewer, in school uniform, (solo), teen age, smile, long hair, upper body, trending on pixiv, 8k wallpaper, beautiful face"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": [
+        405,
+        92
+      ],
+      "size": {
+        "0": 400,
+        "1": 270.0000305175781
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54,
+          "slot_index": 0
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 55,
+          "widget": {
+            "name": "text_g",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_G"
+              }
+            ]
+          }
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 57,
+          "widget": {
+            "name": "text_l",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_L"
+              }
+            ]
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            56
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "nsfw, bad face, lowres, low quality, worst quality, low effort, watermark, signature, ugly, poorly drawn ",
+        "nsfw, bad face, lowres, low quality, worst quality, low effort, watermark, signature, ugly, poorly drawn "
+      ]
+    },
+    {
+      "id": 19,
+      "type": "SaveImage",
+      "pos": [
+        863,
+        321
+      ],
+      "size": [
+        486.4142701494434,
+        454.62736267364994
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 48
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "lllite_output"
+      ]
+    },
+    {
+      "id": 43,
+      "type": "EmptyLatentImage",
+      "pos": [
+        -18,
+        165
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            68,
+            100
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -541,
+        35
+      ],
+      "size": {
+        "0": 397,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            97
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            49,
+            54
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            46
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0_0.9vae.safetensors"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "KSampler",
+      "pos": [
+        868,
+        -220
+      ],
+      "size": {
+        "0": 315,
+        "1": 474
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 98
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 50
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 56
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            45
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1,
+        "fixed",
+        36,
+        7.5,
+        "ddim",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 56,
+      "type": "LLLiteLoader",
+      "pos": [
+        415,
+        435
+      ],
+      "size": [
+        379.86555395507753,
+        98
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 97
+        },
+        {
+          "name": "cond_image",
+          "type": "IMAGE",
+          "link": 105
+        },
+        {
+          "name": "latents",
+          "type": "LATENT",
+          "link": 100
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            98
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLLiteLoader"
+      },
+      "widgets_values": [
+        "controllllite_v01032064e_sdxl_canny_anime.safetensors"
+      ]
+    },
+    {
+      "id": 61,
+      "type": "ImageScale",
+      "pos": [
+        52,
+        510
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 104
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            105
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "bilinear",
+        1024,
+        1024,
+        "disabled"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "LoadImage",
+      "pos": [
+        -395,
+        380
+      ],
+      "size": [
+        428.4960306036878,
+        442.3898617392815
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            104
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "canny1.png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      45,
+      17,
+      0,
+      26,
+      0,
+      "LATENT"
+    ],
+    [
+      46,
+      4,
+      2,
+      26,
+      1,
+      "VAE"
+    ],
+    [
+      48,
+      26,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      49,
+      4,
+      1,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      50,
+      30,
+      0,
+      17,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      51,
+      32,
+      0,
+      30,
+      1,
+      "STRING"
+    ],
+    [
+      52,
+      32,
+      0,
+      30,
+      2,
+      "STRING"
+    ],
+    [
+      54,
+      4,
+      1,
+      33,
+      0,
+      "CLIP"
+    ],
+    [
+      55,
+      16,
+      0,
+      33,
+      1,
+      "STRING"
+    ],
+    [
+      56,
+      33,
+      0,
+      17,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      57,
+      16,
+      0,
+      33,
+      2,
+      "STRING"
+    ],
+    [
+      68,
+      43,
+      0,
+      17,
+      3,
+      "LATENT"
+    ],
+    [
+      97,
+      4,
+      0,
+      56,
+      0,
+      "MODEL"
+    ],
+    [
+      98,
+      56,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      100,
+      43,
+      0,
+      56,
+      2,
+      "LATENT"
+    ],
+    [
+      104,
+      59,
+      0,
+      61,
+      0,
+      "IMAGE"
+    ],
+    [
+      105,
+      61,
+      0,
+      56,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
