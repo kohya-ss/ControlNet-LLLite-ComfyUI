@@ -1,6 +1,6 @@
 {
-  "last_node_id": 61,
-  "last_link_id": 105,
+  "last_node_id": 62,
+  "last_link_id": 108,
   "nodes": [
     {
       "id": 16,
@@ -134,12 +134,12 @@
         407,
         -219
       ],
-      "size": [
-        399.8445539550776,
-        262.62879736328114
-      ],
+      "size": {
+        "0": 399.84454345703125,
+        "1": 262.6287841796875
+      },
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -216,7 +216,7 @@
         "1": 270.0000305175781
       },
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -289,10 +289,10 @@
         863,
         321
       ],
-      "size": [
-        486.4142701494434,
-        454.62736267364994
-      ],
+      "size": {
+        "0": 486.4142761230469,
+        "1": 454.6273498535156
+      },
       "flags": {},
       "order": 11,
       "mode": 0,
@@ -327,8 +327,7 @@
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            68,
-            100
+            68
           ],
           "shape": 3,
           "slot_index": 0
@@ -341,54 +340,6 @@
         1024,
         1024,
         1
-      ]
-    },
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        -541,
-        35
-      ],
-      "size": {
-        "0": 397,
-        "1": 98
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            97
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            49,
-            54
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            46
-          ],
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "sd_xl_base_1.0_0.9vae.safetensors"
       ]
     },
     {
@@ -409,7 +360,7 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 98
+          "link": 108
         },
         {
           "name": "positive",
@@ -452,109 +403,18 @@
       ]
     },
     {
-      "id": 56,
-      "type": "LLLiteLoader",
-      "pos": [
-        415,
-        435
-      ],
-      "size": [
-        379.86555395507753,
-        98
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 97
-        },
-        {
-          "name": "cond_image",
-          "type": "IMAGE",
-          "link": 105
-        },
-        {
-          "name": "latents",
-          "type": "LATENT",
-          "link": 100
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            98
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLLiteLoader"
-      },
-      "widgets_values": [
-        "controllllite_v01032064e_sdxl_canny_anime.safetensors"
-      ]
-    },
-    {
-      "id": 61,
-      "type": "ImageScale",
-      "pos": [
-        52,
-        510
-      ],
-      "size": {
-        "0": 315,
-        "1": 130
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 104
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            105
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageScale"
-      },
-      "widgets_values": [
-        "bilinear",
-        1024,
-        1024,
-        "disabled"
-      ]
-    },
-    {
       "id": 59,
       "type": "LoadImage",
       "pos": [
         -395,
         380
       ],
-      "size": [
-        428.4960306036878,
-        442.3898617392815
-      ],
+      "size": {
+        "0": 428.49603271484375,
+        "1": 442.3898620605469
+      },
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -579,6 +439,140 @@
       "widgets_values": [
         "canny1.png",
         "image"
+      ]
+    },
+    {
+      "id": 61,
+      "type": "ImageScale",
+      "pos": [
+        52,
+        510
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 104
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            106
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "bilinear",
+        1024,
+        1024,
+        "disabled"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -541,
+        35
+      ],
+      "size": {
+        "0": 397,
+        "1": 98
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            107
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            49,
+            54
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            46
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0_0.9vae.safetensors"
+      ]
+    },
+    {
+      "id": 62,
+      "type": "LLLiteLoader",
+      "pos": [
+        405,
+        433
+      ],
+      "size": [
+        396.92310800781274,
+        80.65141015625022
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 107
+        },
+        {
+          "name": "cond_image",
+          "type": "IMAGE",
+          "link": 106
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            108
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLLiteLoader"
+      },
+      "widgets_values": [
+        "controllllite_v01032064e_sdxl_canny_anime.safetensors"
       ]
     }
   ],
@@ -680,30 +674,6 @@
       "LATENT"
     ],
     [
-      97,
-      4,
-      0,
-      56,
-      0,
-      "MODEL"
-    ],
-    [
-      98,
-      56,
-      0,
-      17,
-      0,
-      "MODEL"
-    ],
-    [
-      100,
-      43,
-      0,
-      56,
-      2,
-      "LATENT"
-    ],
-    [
       104,
       59,
       0,
@@ -712,12 +682,28 @@
       "IMAGE"
     ],
     [
-      105,
+      106,
       61,
       0,
-      56,
+      62,
       1,
       "IMAGE"
+    ],
+    [
+      107,
+      4,
+      0,
+      62,
+      0,
+      "MODEL"
+    ],
+    [
+      108,
+      62,
+      0,
+      17,
+      0,
+      "MODEL"
     ]
   ],
   "groups": [],
