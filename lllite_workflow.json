@@ -538,10 +538,10 @@
         405,
         433
       ],
-      "size": [
-        396.92310800781274,
-        80.65141015625022
-      ],
+      "size": {
+        "0": 396.923095703125,
+        "1": 174
+      },
       "flags": {},
       "order": 8,
       "mode": 0,
@@ -572,7 +572,11 @@
         "Node name for S&R": "LLLiteLoader"
       },
       "widgets_values": [
-        "controllllite_v01032064e_sdxl_canny_anime.safetensors"
+        "controllllite_v01032064e_sdxl_canny_anime.safetensors",
+        1,
+        0,
+        0,
+        0
       ]
     }
   ],
