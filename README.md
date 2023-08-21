@@ -4,6 +4,8 @@
 
 ControlNet-LLLiteがそもそもきわめて実験的な実装のため、問題がいろいろあるかもしれません。
 
+![image](https://github.com/kohya-ss/ControlNet-LLLite-ComfyUI/assets/52813779/ef2ea8d6-121b-48ea-b4b0-a41601dcd6f2)
+
 # Install
 
 1. `custom_nodes`にcloneします。
