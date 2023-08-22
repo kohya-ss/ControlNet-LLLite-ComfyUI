@@ -210,9 +210,11 @@ class LLLiteModule(torch.nn.Module):
                 if self.is_first and self.current_step == self.end_step:
                     print(f"end LLLite: step {self.current_step}")
                 self.current_step += 1
+                if self.current_step >= self.num_steps:
+                    self.current_step = 0  # reset
                 return torch.zeros_like(x)
             else:
-                if self.is_first and self.current_step ==self.start_step:
+                if self.is_first and self.current_step == self.start_step:
                     print(f"start LLLite: step {self.current_step}")
                 self.current_step += 1
                 if self.current_step >= self.num_steps:
